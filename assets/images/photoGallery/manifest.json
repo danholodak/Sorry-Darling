@@ -1,45 +1,5 @@
 [
   {
-    "src": "assets/images/photoGallery/_MG_3188 copy.jpg",
-    "caption": "_MG_3188 copy"
-  },
-  {
-    "src": "assets/images/photoGallery/_MG_3203 copy.jpg",
-    "caption": "_MG_3203 copy"
-  },
-  {
-    "src": "assets/images/photoGallery/_MG_3210 copy.jpg",
-    "caption": "_MG_3210 copy"
-  },
-  {
-    "src": "assets/images/photoGallery/_MG_3215 copy.jpg",
-    "caption": "_MG_3215 copy"
-  },
-  {
-    "src": "assets/images/photoGallery/_MG_3217 copy.jpg",
-    "caption": "_MG_3217 copy"
-  },
-  {
-    "src": "assets/images/photoGallery/_MG_3219 copy.jpg",
-    "caption": "_MG_3219 copy"
-  },
-  {
-    "src": "assets/images/photoGallery/_MG_3241 copy.jpg",
-    "caption": "_MG_3241 copy"
-  },
-  {
-    "src": "assets/images/photoGallery/_MG_3257 copy.jpg",
-    "caption": "_MG_3257 copy"
-  },
-  {
-    "src": "assets/images/photoGallery/_MG_3321 copy.jpg",
-    "caption": "_MG_3321 copy"
-  },
-  {
-    "src": "assets/images/photoGallery/_MG_3339 copy.jpg",
-    "caption": "_MG_3339 copy"
-  },
-  {
     "src": "assets/images/photoGallery/20261002_0312.jpg",
     "caption": "20261002_0312"
   },
@@ -124,84 +84,44 @@
     "caption": "IMG_5241"
   },
   {
-    "src": "assets/images/photoGallery/Sorry Darling - SELECTS (1 of 19).jpg",
-    "caption": "Sorry Darling - SELECTS (1 of 19)"
+    "src": "assets/images/photoGallery/MG_3188.jpg",
+    "caption": "MG_3188"
   },
   {
-    "src": "assets/images/photoGallery/Sorry Darling - SELECTS (19 of 19).jpg",
-    "caption": "Sorry Darling - SELECTS (19 of 19)"
+    "src": "assets/images/photoGallery/MG_3203.jpg",
+    "caption": "MG_3203"
   },
   {
-    "src": "assets/images/photoGallery/Sorry Darling - SELECTS (2 of 19).jpg",
-    "caption": "Sorry Darling - SELECTS (2 of 19)"
+    "src": "assets/images/photoGallery/MG_3210.jpg",
+    "caption": "MG_3210"
   },
   {
-    "src": "assets/images/photoGallery/Sorry Darling - SELECTS (8 of 19).jpg",
-    "caption": "Sorry Darling - SELECTS (8 of 19)"
+    "src": "assets/images/photoGallery/MG_3215.jpg",
+    "caption": "MG_3215"
   },
   {
-    "src": "assets/images/photoGallery/Sorry Darling - set (1 of 34).jpg",
-    "caption": "Sorry Darling - set (1 of 34)"
+    "src": "assets/images/photoGallery/MG_3217.jpg",
+    "caption": "MG_3217"
   },
   {
-    "src": "assets/images/photoGallery/Sorry Darling - set (11 of 34).jpg",
-    "caption": "Sorry Darling - set (11 of 34)"
+    "src": "assets/images/photoGallery/MG_3219.jpg",
+    "caption": "MG_3219"
   },
   {
-    "src": "assets/images/photoGallery/Sorry Darling - set (13 of 34).jpg",
-    "caption": "Sorry Darling - set (13 of 34)"
+    "src": "assets/images/photoGallery/MG_3241.jpg",
+    "caption": "MG_3241"
   },
   {
-    "src": "assets/images/photoGallery/Sorry Darling - set (15 of 34).jpg",
-    "caption": "Sorry Darling - set (15 of 34)"
+    "src": "assets/images/photoGallery/MG_3257.jpg",
+    "caption": "MG_3257"
   },
   {
-    "src": "assets/images/photoGallery/Sorry Darling - set (2 of 34).jpg",
-    "caption": "Sorry Darling - set (2 of 34)"
+    "src": "assets/images/photoGallery/MG_3321.jpg",
+    "caption": "MG_3321"
   },
   {
-    "src": "assets/images/photoGallery/Sorry Darling - set (20 of 34).jpg",
-    "caption": "Sorry Darling - set (20 of 34)"
-  },
-  {
-    "src": "assets/images/photoGallery/Sorry Darling - set (21 of 34).jpg",
-    "caption": "Sorry Darling - set (21 of 34)"
-  },
-  {
-    "src": "assets/images/photoGallery/Sorry Darling - set (24 of 34).jpg",
-    "caption": "Sorry Darling - set (24 of 34)"
-  },
-  {
-    "src": "assets/images/photoGallery/Sorry Darling - set (27 of 34).jpg",
-    "caption": "Sorry Darling - set (27 of 34)"
-  },
-  {
-    "src": "assets/images/photoGallery/Sorry Darling - set (29 of 34).jpg",
-    "caption": "Sorry Darling - set (29 of 34)"
-  },
-  {
-    "src": "assets/images/photoGallery/Sorry Darling - set (3 of 34).jpg",
-    "caption": "Sorry Darling - set (3 of 34)"
-  },
-  {
-    "src": "assets/images/photoGallery/Sorry Darling - set (31 of 34).jpg",
-    "caption": "Sorry Darling - set (31 of 34)"
-  },
-  {
-    "src": "assets/images/photoGallery/Sorry Darling - set (33 of 34).jpg",
-    "caption": "Sorry Darling - set (33 of 34)"
-  },
-  {
-    "src": "assets/images/photoGallery/Sorry Darling - set (4 of 34).jpg",
-    "caption": "Sorry Darling - set (4 of 34)"
-  },
-  {
-    "src": "assets/images/photoGallery/Sorry Darling - set (7 of 34).jpg",
-    "caption": "Sorry Darling - set (7 of 34)"
-  },
-  {
-    "src": "assets/images/photoGallery/Sorry Darling - set (8 of 34).jpg",
-    "caption": "Sorry Darling - set (8 of 34)"
+    "src": "assets/images/photoGallery/MG_3339.jpg",
+    "caption": "MG_3339"
   },
   {
     "src": "assets/images/photoGallery/Sorry Darling-011.jpg",
@@ -230,6 +150,86 @@
   {
     "src": "assets/images/photoGallery/Sorry Darling-099.jpg",
     "caption": "Sorry Darling-099"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-SELECTS(1 of 19).jpg",
+    "caption": "Sorry Darling-SELECTS(1 of 19)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-SELECTS(19of19).jpg",
+    "caption": "Sorry Darling-SELECTS(19of19)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-SELECTS(2of19).jpg",
+    "caption": "Sorry Darling-SELECTS(2of19)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-SELECTS(8of19).jpg",
+    "caption": "Sorry Darling-SELECTS(8of19)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(11of34).jpg",
+    "caption": "Sorry Darling-set(11of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(13of34).jpg",
+    "caption": "Sorry Darling-set(13of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(15of34).jpg",
+    "caption": "Sorry Darling-set(15of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(1of34).jpg",
+    "caption": "Sorry Darling-set(1of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(20of34).jpg",
+    "caption": "Sorry Darling-set(20of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(21of34).jpg",
+    "caption": "Sorry Darling-set(21of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(24of34).jpg",
+    "caption": "Sorry Darling-set(24of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(27of34).jpg",
+    "caption": "Sorry Darling-set(27of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(29of34).jpg",
+    "caption": "Sorry Darling-set(29of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(2of34).jpg",
+    "caption": "Sorry Darling-set(2of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(31of34).jpg",
+    "caption": "Sorry Darling-set(31of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(33of34).jpg",
+    "caption": "Sorry Darling-set(33of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(3of34).jpg",
+    "caption": "Sorry Darling-set(3of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(4of34).jpg",
+    "caption": "Sorry Darling-set(4of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(7of34).jpg",
+    "caption": "Sorry Darling-set(7of34)"
+  },
+  {
+    "src": "assets/images/photoGallery/Sorry Darling-set(8of34).jpg",
+    "caption": "Sorry Darling-set(8of34)"
   },
   {
     "src": "assets/images/photoGallery/SOZ-003.jpg",
