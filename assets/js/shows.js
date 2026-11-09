@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('');
   };
 
-  fetch('https://rest.bandsintown.com/artists/id_10372011/events?app_id=squarespace-vuvuzela-keyboard-rdsz')
+  fetch('https://rest.bandsintown.com/artists/id_15587835/events?app_id=squarespace-vuvuzela-keyboard-rdsz')
     .then((response) => {
       if (!response.ok) {
         throw new Error(`Bandsintown request failed: ${response.status}`);
