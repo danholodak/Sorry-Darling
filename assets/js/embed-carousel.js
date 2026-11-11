@@ -43,6 +43,8 @@ function initCarousel(carouselEl) {
   let embeds = [];
   let index = 0;
   let lastIndex = 0;
+  let touchStartX = null;
+  let touchStartY = null;
 
   // Build an embed node from raw HTML (used for rendering and measurement)
   function buildEmbedElement(raw) {
@@ -269,6 +271,34 @@ function initCarousel(carouselEl) {
 
   if (prevBtn) prevBtn.addEventListener('click', prev);
   if (nextBtn) nextBtn.addEventListener('click', next);
+
+  const handleMobileSwipe = (event) => {
+    if (window.innerWidth > 750) return;
+
+    const touch = event.changedTouches[0];
+    if (!touch) return;
+
+    if (event.type === 'touchstart') {
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+      return;
+    }
+
+    if (touchStartX === null) return;
+
+    const diffX = touch.clientX - touchStartX;
+    const diffY = touch.clientY - touchStartY;
+    if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX < 0) next();
+      else prev();
+    }
+
+    touchStartX = null;
+    touchStartY = null;
+  };
+
+  view.addEventListener('touchstart', handleMobileSwipe, { passive: true });
+  view.addEventListener('touchend', handleMobileSwipe, { passive: true });
 
   // keyboard navigation scoped to this carousel
   carouselEl.tabIndex = 0;

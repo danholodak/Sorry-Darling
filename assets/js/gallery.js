@@ -91,10 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
       updateLightbox();
     });
 
+    let touchStartX = null;
+    let touchStartY = null;
+
     closeBtn.addEventListener('click', () => {
       overlay.classList.remove('is-open');
       overlay.setAttribute('aria-hidden', 'true');
       state.lightboxOpen = false;
+      touchStartX = null;
+      touchStartY = null;
     });
 
     overlay.addEventListener('click', (event) => {
@@ -102,6 +107,31 @@ document.addEventListener('DOMContentLoaded', () => {
         closeBtn.click();
       }
     });
+
+    overlay.addEventListener('touchstart', (event) => {
+      if (window.innerWidth > 750) return;
+      const touch = event.changedTouches[0];
+      if (!touch) return;
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;
+    }, { passive: true });
+
+    overlay.addEventListener('touchend', (event) => {
+      if (window.innerWidth > 750 || touchStartX === null) return;
+      const touch = event.changedTouches[0];
+      if (!touch) return;
+
+      const diffX = touch.clientX - touchStartX;
+      const diffY = touch.clientY - touchStartY;
+
+      if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < 0) nextBtn.click();
+        else prevBtn.click();
+      }
+
+      touchStartX = null;
+      touchStartY = null;
+    }, { passive: true });
 
     document.addEventListener('keydown', (event) => {
       if (!state.lightboxOpen) return;
