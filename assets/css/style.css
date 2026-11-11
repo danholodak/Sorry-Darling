@@ -973,6 +973,17 @@ main {
 	margin: 0 auto;
 }
 
+.carousel-swipe-layer {
+	position: absolute;
+	top: -120px;
+	bottom: -120px;
+	z-index: 1;
+	background: transparent;
+	touch-action: pan-y;
+	pointer-events: auto;
+    width: 100vw;
+}
+
 .carousel-view iframe {
 	width: 100%;
 	max-width: 100%;

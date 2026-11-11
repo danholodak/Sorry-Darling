@@ -272,13 +272,22 @@ function initCarousel(carouselEl) {
   if (prevBtn) prevBtn.addEventListener('click', prev);
   if (nextBtn) nextBtn.addEventListener('click', next);
 
+  const swipeLayer = document.createElement('div');
+  swipeLayer.className = 'carousel-swipe-layer';
+  swipeLayer.setAttribute('aria-hidden', 'true');
+  carouselEl.appendChild(swipeLayer);
+
   const handleMobileSwipe = (event) => {
     if (window.innerWidth > 750) return;
 
-    const touch = event.changedTouches[0];
+    const touch = event.changedTouches ? event.changedTouches[0] : null;
     if (!touch) return;
 
     if (event.type === 'touchstart') {
+      const rect = swipeLayer.getBoundingClientRect();
+      const insideSwipeZone = touch.clientX >= rect.left && touch.clientX <= rect.right && touch.clientY >= rect.top && touch.clientY <= rect.bottom;
+      if (!insideSwipeZone) return;
+
       touchStartX = touch.clientX;
       touchStartY = touch.clientY;
       return;
@@ -288,7 +297,10 @@ function initCarousel(carouselEl) {
 
     const diffX = touch.clientX - touchStartX;
     const diffY = touch.clientY - touchStartY;
-    if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+
+    const isHorizontalSwipe = Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY);
+    if (isHorizontalSwipe) {
+      event.preventDefault();
       if (diffX < 0) next();
       else prev();
     }
@@ -297,8 +309,8 @@ function initCarousel(carouselEl) {
     touchStartY = null;
   };
 
-  view.addEventListener('touchstart', handleMobileSwipe, { passive: true });
-  view.addEventListener('touchend', handleMobileSwipe, { passive: true });
+  swipeLayer.addEventListener('touchstart', handleMobileSwipe, { passive: true });
+  swipeLayer.addEventListener('touchend', handleMobileSwipe, { passive: true });
 
   // keyboard navigation scoped to this carousel
   carouselEl.tabIndex = 0;
