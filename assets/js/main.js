@@ -13,7 +13,42 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.head.appendChild(favicon);
   };
 
+  const renderSocialLinks = () => {
+    const navs = document.querySelectorAll('.site-nav');
+    const socialsList = Array.isArray(window.socials) ? window.socials : [];
+
+    if (!socialsList.length) return;
+
+    navs.forEach((nav) => {
+      if (nav.querySelector('.social-links')) return;
+
+      const socialLinks = document.createElement('div');
+      socialLinks.className = 'social-links';
+      socialLinks.setAttribute('aria-label', 'Social media links');
+
+      socialsList.forEach((social) => {
+        const link = document.createElement('a');
+        link.href = social.url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.className = 'social-link';
+        link.setAttribute('aria-label', social.name);
+
+        const img = document.createElement('img');
+        img.src = social.image;
+        img.alt = social.name;
+        img.loading = 'lazy';
+
+        link.appendChild(img);
+        socialLinks.appendChild(link);
+      });
+
+      nav.appendChild(socialLinks);
+    });
+  };
+
   ensureFavicon();
+  renderSocialLinks();
 
   const navs = document.querySelectorAll('.site-nav');
 
