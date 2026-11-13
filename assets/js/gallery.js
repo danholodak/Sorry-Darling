@@ -8,6 +8,55 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxOpen: false
   };
 
+  const parseFilenameDate = (value) => {
+    const filename = String(value || '').split('/').pop().split('.')[0];
+    const [datePart] = filename.split('_');
+    if (!datePart) return null;
+
+    const dateMatch = datePart.match(/^(\d{4})-(\d{2})-(\d{2})(?:-(\d{2})-(\d{2})-(\d{2}))?$/);
+    if (!dateMatch) return null;
+
+    const [, year, month, day, hour = '0', minute = '0', second = '0'] = dateMatch;
+    const parsed = new Date(
+      Number(year),
+      Number(month) - 1,
+      Number(day),
+      Number(hour),
+      Number(minute),
+      Number(second)
+    );
+
+    return Number.isNaN(parsed.getTime()) ? null : parsed;
+  };
+
+  const normalizeTitleFromFilename = (value) => {
+    const filename = String(value || '').split('/').pop().split('.')[0];
+    const [, ...titleParts] = filename.split('_');
+    const rawTitle = titleParts.length ? titleParts.join(' ') : filename;
+    console.log({ rawTitle });
+    return rawTitle
+      .replace(/[_-]+/g, ' ')
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean)
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(' ');
+  };
+
+  const sortGalleryItems = (items) => [...items].sort((a, b) => {
+    const aDate = parseFilenameDate(a.src || a.caption || '');
+    const bDate = parseFilenameDate(b.src || b.caption || '');
+
+    if (aDate && bDate) {
+      return bDate.getTime() - aDate.getTime();
+    }
+
+    if (aDate && !bDate) return -1;
+    if (!aDate && bDate) return 1;
+
+    return 0;
+  });
+
   const createLightbox = () => {
     const overlay = document.createElement('div');
     overlay.className = 'gallery-lightbox';
@@ -190,7 +239,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!response.ok) throw new Error('Manifest not found');
       const items = await response.json();
 
-      state.items = Array.isArray(items) ? items.filter((entry) => entry && entry.src) : [];
+      state.items = Array.isArray(items)
+        ? items
+            .filter((entry) => entry && entry.src)
+            .map((entry) => ({
+              ...entry,
+              caption: normalizeTitleFromFilename(entry.src || entry.caption || ''),
+            }))
+        : [];
     } catch (error) {
       console.warn('Gallery manifest unavailable; using fallback image set.', error);
       state.items = [];
@@ -199,11 +255,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!state.items.length) {
       const fallbackImages = Array.from(document.querySelectorAll('.gallery img')).map((img) => ({
         src: img.src,
-        caption: img.getAttribute('alt') || img.dataset.caption || img.src.split('/').pop().split('.').slice(0, -1).join('.')
+        caption: normalizeTitleFromFilename(img.getAttribute('alt') || img.dataset.caption || img.src)
       }));
       state.items = fallbackImages;
     }
 
+    state.items = sortGalleryItems(state.items);
     renderGallery();
   };
 

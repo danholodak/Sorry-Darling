@@ -998,7 +998,6 @@ main {
 	color: #fff;
 	font-size: 0.72rem;
 	letter-spacing: 0.08em;
-	text-transform: uppercase;
 	opacity: 0;
 	transform: translateY(8px);
 	transition: opacity 160ms ease, transform 160ms ease;
@@ -1114,12 +1113,11 @@ main {
 	min-height: 78px;
 	padding: 14px 20px 12px 24px;
 	background-image: url('../images/tornPaper/20.png');
-	background-size: contain;
+	background-size: 100% 100%;
 	background-position: center;
 	background-repeat: no-repeat;
 	font-size: 18px;
 	letter-spacing: 0.08em;
-	text-transform: uppercase;
 	max-width: 70%;
 	color: #1a1a1a;
 	box-shadow: 0 8px 16px rgba(0,0,0,0.08);
@@ -1139,7 +1137,7 @@ main {
 	height: 78px;
 	padding: 10px 18px;
 	background-image: url('../images/tornPaper/pink.png');
-	background-size: contain;
+	background-size: 100% 100%;
 	background-position: center;
 	background-repeat: no-repeat;
 	border: 0;
