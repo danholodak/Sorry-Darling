@@ -74,6 +74,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const normalizeCell = (value) => String(value || '').trim().replace(/^"|"$/g, '').replace(/""/g, '"');
 
+  const parsePressDate = (value) => {
+    if (!value) return null;
+
+    const raw = String(value).trim();
+    if (!raw) return null;
+
+    const monthMap = {
+      January: 0,
+      February: 1,
+      March: 2,
+      April: 3,
+      May: 4,
+      June: 5,
+      July: 6,
+      August: 7,
+      September: 8,
+      October: 9,
+      November: 10,
+      December: 11,
+    };
+
+    const monthYearMatch = raw.match(/^([A-Za-z]+)\s+(\d{4})$/);
+    if (monthYearMatch) {
+      const monthIndex = monthMap[monthYearMatch[1]];
+      if (monthIndex !== undefined) {
+        return new Date(Number(monthYearMatch[2]), monthIndex, 1);
+      }
+    }
+
+    const monthDayYearMatch = raw.match(/^([A-Za-z]+)\s+(\d{1,2})(?:,)?\s+(\d{4})$/);
+    if (monthDayYearMatch) {
+      const monthIndex = monthMap[monthDayYearMatch[1]];
+      if (monthIndex !== undefined) {
+        return new Date(Number(monthDayYearMatch[3]), monthIndex, Number(monthDayYearMatch[2]));
+      }
+    }
+
+    const parsed = new Date(raw);
+    return Number.isNaN(parsed.getTime()) ? null : parsed;
+  };
+
   fetch('assets/pressInfo.csv')
     .then((response) => {
       if (!response.ok) {
@@ -82,7 +123,17 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.text();
     })
     .then((csvText) => {
-      const rows = parseCsv(csvText);
+      const rows = parseCsv(csvText)
+        .map((row) => ({
+          row,
+          date: parsePressDate(row[2]),
+        }))
+        .sort((a, b) => {
+          const aTime = a.date ? a.date.getTime() : 0;
+          const bTime = b.date ? b.date.getTime() : 0;
+          return bTime - aTime;
+        })
+        .map(({ row }) => row);
 
       rows.forEach((row) => {
         const [quote, source, date, link] = row.map(normalizeCell);

@@ -303,15 +303,14 @@ p.blurb{
 		display: block;
 	}
 }
-@media (max-width: 674px) {
-    h1.page-title{
-        margin-top:100px
-    }
-}
 
 @media (max-width: 750px) {
     a.mini-logo{
         top: 10px;
+    }
+
+    h1.page-title{
+        margin-top:100px
     }
     .site-nav{
         gap: 20px;
@@ -354,6 +353,8 @@ p.blurb{
     
 
 	.socials-menu-toggle.is-open{
+        position: fixed;
+        right: 12px;
         .socials-menu-label{
             color: #111;
         }
@@ -390,6 +391,7 @@ p.blurb{
 	.socials-menu-panel.is-open {
 		transform: translateY(0);
 		opacity: 1;
+        filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.215));
 		animation: socialsDropIn 260ms ease-out forwards;
 	}
 
