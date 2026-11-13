@@ -760,7 +760,7 @@ main {
 	align-items: stretch;
     width:fit-content;
 	transition: transform 180ms ease, filter 180ms ease;
-    padding: 40px 10px 10px 50px;
+    padding: 80px 20px 50px 20px;
 }
 
 .press-item:hover {
